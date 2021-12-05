@@ -1,0 +1,44 @@
+<div>
+  <div>
+    <table class="center">
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Phone</th>
+      </tr>
+
+      <tr
+        *ngFor="let user of users"
+        [routerLink]="['/edit-user']"
+        [queryParams]="{
+          id: user.id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          age: user.age,
+          phone: user.phone,
+          action: 'Edit'
+        }"
+      >
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.phone }}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <input
+      type="image"
+      src="../../assets/plus-icon-23565-64x64.ico"
+      name="submit"
+      width="100"
+      height="48"
+      alt="+"
+      [routerLink]="['/edit-user']"
+      [queryParams]="{ action: 'Add' }"
+    />
+  </div>
+</div>

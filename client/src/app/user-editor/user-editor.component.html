@@ -1,0 +1,73 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <fieldset ngModelGroup="name">
+    <div class="form-group">
+      <!-- <label for="first-name">First Name: </label> -->
+      <input 
+      id="firstName"
+        name="firstName"
+        type="text"
+        class="form-control"
+        required
+        class="form-control text-center"
+        [(ngModel)]="user.firstName"
+        pattern="^[a-zA-Z]+$"
+      />
+
+      <!-- <div *ngIf="firstName?. && (firstname?.dirty || firstname?.touched)" class="error">
+        <div *ngIf="firstname.errors.required">
+          First Name is required
+        </div>
+        <div *ngIf="firstname.errors.minlength">
+          First Name Minimum Length is {{firstname.errors.minlength?.requiredLength}}
+        </div> -->
+     
+
+      <!-- <div [hidden]="f.submitted && f.controls.name?.controls.firstName?.invalid" class="alert alert-danger">
+        <span>First name is required</span>
+      </div> -->
+    </div>
+
+    <div class="form-group">
+      <!-- <label for="last-name">Last Name: </label> -->
+      <input
+        ngModel
+        name="lastName"
+        type="text"
+        class="form-control"
+        required
+        [(ngModel)]="user.lastName"
+        pattern="^[a-zA-Z]+$"
+      />
+    </div>
+    <div class="form-group">
+      <!-- <label for="age">Age: </label> -->
+      <input
+        ngModel
+        name="age"
+        type="number"
+        class="form-control"
+        required
+        [(ngModel)]="user.age"
+        pattern="[1-9]{1}[0-9]{0,2}"
+      />
+    </div>
+    <div class="form-group">
+      <!-- <label for="phone">Phone: </label> -->
+      <input
+        ngModel
+        name="phone"
+        type="text"
+        class="form-control"
+        required
+        [(ngModel)]="user.phone"
+        pattern="[0-9]{10}"
+      />
+    </div>
+  </fieldset>
+
+  <button type="submit">{{ action }}</button>
+  <button (click)="goBack()">Back</button>
+</form>
+<pre>
+  {{ f.value | json }}
+</pre>
