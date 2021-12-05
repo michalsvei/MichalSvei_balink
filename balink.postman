@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "954cb5af-793b-4ae0-8ea1-37bc49b5b357",
+		"name": "balink",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/addUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"555555\",\r\n        \"firstName\": \"Natti\",\r\n        \"lastName\": \"Svei\",\r\n        \"age\": 30,\r\n        \"phone\": \"0533101796\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/addUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/getUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"313780553\",\r\n        \"firstName\": \"Aharon\",\r\n        \"lastName\": \"Svei\",\r\n        \"age\": 30,\r\n        \"phone\": \"0533101796\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/updateUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"updateUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
